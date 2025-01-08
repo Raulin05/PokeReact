@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 
 
 const PokeLista = (props) => {
@@ -13,8 +14,13 @@ const PokeLista = (props) => {
 
     return <div>
         <h1>Lista</h1>
-        {pokemons.map(p => <p>Bo nadal</p>)}
-    </div>
-}
+        {pokemons.map(p => {
+            return <p onClick={()=> {Navigate("/pokemon/"+ p.name)}}>Este pokemon es {p.name} </p>
+            }
 
+        )};
+    
+
+        </div>
+}
 export default PokeLista;
